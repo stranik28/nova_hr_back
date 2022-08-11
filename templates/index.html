@@ -1,0 +1,68 @@
+<h1>Our workers</h1>
+<table>
+    <tr>
+        <td>Id</td>
+        <td>calendar</td>
+        <td>fio</td>
+        <td>Skills</td>
+        <td>Type_of_work</td>
+        <td>Level</td>
+        <td>Hard</td>
+        <td>Soft</td>
+        <td>full_Artemsm67</td>
+        <td>full_reaL_IdpNik</td>
+        <td>full_cris_tee</td>
+        <td>full_foxyess2020</td>
+        <td>hard_foxyess2020</td>
+        <td>hard_Artemsm67</td>
+        <td>hard_reaL_IdpNik</td>
+        <td>hard_cris_tee</td>
+        <td>soft_reaL_IdpNik</td>
+        <td>soft_cris_tee</td>
+        <td>soft_foxyess2020</td>
+        <td>date</td>
+        <td>record</td>
+    </tr>
+    {% for item in list %}
+        <tr>
+            <td> {{item['id']}}</td>
+            <td> {{item['calendar']}}</td>
+            <td> {{item['fio']}}</td>
+            <td> {{item['Skills']}}</td>
+            <td> {{item['Type_of_work']}}</td>
+            <td> {{item['Level']}}</td>
+            <td> {{item['hard']}}</td>
+            <td> {{item['soft']}}</td>
+            <td> {{item['full_Artemsm67']}}</td>
+            <td> {{item['full_reaL_IdpNik']}}</td>
+            <td> {{item['full_cris_tee']}}</td>
+            <td> {{item['full_foxyess2020']}}</td>
+            <td> {{item['hard_foxyess2020']}}</td>
+            <td> {{item['hard_Artemsm67']}}</td>
+            <td> {{item['hard_reaL_IdpNik']}}</td>
+            <td> {{item['hard_cris_tee']}}</td>
+            <td> {{item['soft_reaL_IdpNik']}}</td>
+            <td> {{item['soft_cris_tee']}}</td>
+            <td> {{item['soft_foxyess2020']}}</td>
+            <td> {{item['date']}}</td>
+            <td> {{item['record']}}</td>
+        </tr>
+    {% endfor %}
+</table>
+
+<style>
+    table {
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    th, td {
+        text-align: left;
+        padding: 8px;
+    }
+    tr:nth-child(even){background-color: #f2f2f2}
+    th {
+        background-color: #4CAF50;
+        color: white;
+    }
+</style>

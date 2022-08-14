@@ -12,9 +12,11 @@ metadata = MetaData()
 rev = Table('rev', metadata,
     Column('id', Integer, primary_key=True),
     Column('calendar', String(50)),
-    Column('fio', String(50)),
+    Column('fio', String(128)),
+    Column('Education', String(128)),
     Column('Skills', String(50)),
     Column('Type_of_work', String(50)),
+    Column('Experience', String(50)),
     Column('Level', String(50)),
     Column('hard', Float),
     Column('soft', Float),
@@ -52,32 +54,36 @@ def index():
     res = engine.execute(sel)
     answ = res.fetchall()
     list = []
+    # print(len(answ[0]))
     for i in answ:
+        # print(len(i))
         d = {}
         d['id'] = check_is_none(i[0])
         d['calendar'] = check_is_none(i[1])
         d['fio'] = check_is_none(i[2])
-        d['Skills'] = check_is_none(i[3])
-        d['Type_of_work'] = check_is_none(i[4])
-        d['Level'] = check_is_none(i[5])
-        d['hard'] = check_is_none(i[6])
-        d['soft'] = check_is_none(i[7])
-        d['full_Artemsm67'] = check_is_none(i[8])
-        d['full_reaL_IdpNik'] = check_is_none(i[9])
-        d['full_cris_tee'] = check_is_none(i[10])
-        d['full_foxyess2020'] = check_is_none(i[11])
-        d['hard_foxyess2020'] = check_is_none(i[12])
-        d['hard_Artemsm67'] = check_is_none(i[13])
-        d['hard_reaL_IdpNik'] = check_is_none(i[14])
-        d['hard_cris_tee'] = check_is_none(i[15])
-        d['soft_Artemsm67'] = check_is_none(i[16])
-        d['soft_reaL_IdpNik'] = check_is_none(i[17])
-        d['soft_cris_tee'] = check_is_none(i[18])
-        d['soft_foxyess2020'] = check_is_none(i[19])
-        d['date'] = check_is_none(i[20])
-        d['record'] = check_is_none(i[21])
+        d['Education'] = check_is_none(i[3])
+        d['Skills'] = check_is_none(i[4])
+        d['Type_of_work'] = check_is_none(i[5])
+        d['Experience'] = check_is_none(i[6])
+        d['Level'] = check_is_none(i[7])
+        d['hard'] = check_is_none(i[8])
+        d['soft'] = check_is_none(i[9])
+        d['full_Artemsm67'] = check_is_none(i[10])
+        d['full_reaL_IdpNik'] = check_is_none(i[11])
+        d['full_cris_tee'] = check_is_none(i[12])
+        d['full_foxyess2020'] = check_is_none(i[13])
+        d['hard_foxyess2020'] = check_is_none(i[14])
+        d['hard_Artemsm67'] = check_is_none(i[15])
+        d['hard_reaL_IdpNik'] = check_is_none(i[16])
+        d['hard_cris_tee'] = check_is_none(i[17])
+        d['soft_Artemsm67'] = check_is_none(i[18])
+        d['soft_reaL_IdpNik'] = check_is_none(i[19])
+        d['soft_cris_tee'] = check_is_none(i[20])
+        d['soft_foxyess2020'] = check_is_none(i[21])
+        d['date'] = check_is_none(i[22])
+        d['record'] = check_is_none(i[23])
         list.append(d)
-    print(list)
+    # print(list)
     return render_template('index.html', list=list)
 
 app.run()
